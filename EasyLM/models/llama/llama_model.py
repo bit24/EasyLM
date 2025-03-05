@@ -221,6 +221,30 @@ class LLaMAConfigurator(object):
                 max_position_embeddings=8192,
                 rms_norm_eps=1e-5,
                 rope_theta=5e5,
+            ),
+            'llama3.2_3b': dict(
+                base_model='llama3_8b',
+                vocab_size=128256,
+                hidden_size=3072,
+                intermediate_size=8192,
+                num_hidden_layers=28,
+                num_attention_heads=24,
+                num_key_value_heads=8,
+                max_position_embeddings=8192,
+                rms_norm_eps=1e-5,
+                rope_theta=5e5,
+            ),
+            'llama3.1_8b': dict(
+                base_model='llama3_8b',
+                vocab_size=128256,
+                hidden_size=4096,
+                intermediate_size=14336,
+                num_hidden_layers=32,
+                num_attention_heads=32,
+                num_key_value_heads=8,
+                max_position_embeddings=8192,
+                rms_norm_eps=1e-5,
+                rope_theta=5e5,
             )
         }[model_name]
         return mlxu.update_config_dict(config, updates)
